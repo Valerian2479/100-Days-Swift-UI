@@ -23,11 +23,14 @@ print(firstName != secondName)
 print(firstName < secondName)
 print(firstName >= secondName)
 
-//let platform = ["Linux", "MacOS", "Windows"]
-//
-//for os in platform {
-//    print("print os samples \(os).")
-//}
+
+//for loop in a string of array
+let platform = ["Linux", "MacOS", "Windows"]
+
+for os in platform {
+    print("print os samples \(os).")
+}
+
 //
 //for i in 1...5 {
 //    print("The \(i) times table")

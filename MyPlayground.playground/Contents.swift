@@ -14,14 +14,14 @@ if username.isEmpty {
 
 print(username)
 
+//Boolean
+let firstName = "Paul"
+let secondName = "Sophie"
 
-//let firstName = "Paul"
-//let secondName = "Sophie"
-//
-//print(firstName == secondName)
-//print(firstName != secondName)
-//print(firstName < secondName)
-//print(firstName >= secondName)
+print(firstName == secondName)
+print(firstName != secondName)
+print(firstName < secondName)
+print(firstName >= secondName)
 
 //let platform = ["Linux", "MacOS", "Windows"]
 //

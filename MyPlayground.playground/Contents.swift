@@ -50,12 +50,12 @@ for number in numbers {
     }
 }
 
-//
-//
-//print("Haters gonna ")
-//for _ in 1...4 {
-//    print("hate")
-//}
+
+//printing string 4 times appending hate word to the string body
+print("Haters gonna ")
+for _ in 1...4 {
+    print("hate")
+}
 
 //let colors = ["Red", "Green", "Blue", "Orange", "Yellow"]
 //var colorCounter = 0

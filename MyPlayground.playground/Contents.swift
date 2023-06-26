@@ -57,12 +57,13 @@ for _ in 1...4 {
     print("hate")
 }
 
-//let colors = ["Red", "Green", "Blue", "Orange", "Yellow"]
-//var colorCounter = 0
-//while colorCounter < 5 {
-//    print("\(colors[colorCounter]) is a popular color.")
-//    colorCounter += 1
-//}
+//Printing colors in a string of array while counter is less than 5
+let colors = ["Red", "Green", "Blue", "Orange", "Yellow"]
+var colorCounter = 0
+while colorCounter < 5 {
+    print("\(colors[colorCounter]) is a popular color.")
+    colorCounter += 1
+}
 
 
 //var cats: Int = 0

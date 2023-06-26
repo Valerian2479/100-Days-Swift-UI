@@ -31,23 +31,25 @@ for os in platform {
     print("print os samples \(os).")
 }
 
-//
-//for i in 1...5 {
-//    print("The \(i) times table")
-//
-//    for j in 1...5 {
-//        print("    \(j) x \(i) is \(j * i)")
-//    }
-//
-//    print()
-//}
+//Nested for loop, looping through items 1 - 5 as outer loop, multiplying current value of i to j 1..5
+for i in 1...5 {
+    print("The \(i) times table")
 
-//var numbers = [1, 2, 3, 4, 5, 6]
-//for number in numbers {
-//    if number % 2 == 0 {
-//        print(number)
-//    }
-//}
+    for j in 1...5 {
+        print("    \(j) x \(i) is \(j * i)")
+    }
+
+    print()
+}
+
+//printing number that is a multiple of 2
+var numbers = [1, 2, 3, 4, 5, 6]
+for number in numbers {
+    if number % 2 == 0 {
+        print(number)
+    }
+}
+
 //
 //
 //print("Haters gonna ")

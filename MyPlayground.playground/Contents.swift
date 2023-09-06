@@ -378,16 +378,503 @@ while colorCounter < 5 {
 //print(majestouch.noiseLevel)
 
 
-struct Toy {
-    var color: String
-    var isForGirls: Bool {
-        if color == "Pink" {
-            return true
+//struct Toy {
+//    var color: String
+//    var isForGirls: Bool {
+//        if color == "Pink" {
+//            return true
+//        } else {
+//            return true
+//        }
+//    }
+//}
+//
+//let color = Toy(color: "1")
+//print(color.isForGirls)
+//
+//
+//struct Car {
+//
+//    static let model = "PCX 160"
+//    static let seats = "4"
+//    static let gear = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//
+//    mutating func changeGear(gear: Int) -> Bool {
+//        if (gear >= 1 && gear <= 10 ) {
+//            return true
+//        } else {
+//            return false
+//        }
+//    }
+//
+//}
+//
+//print(Car.seats)
+//
+//print(Car.model)
+//
+//var car = Car();
+//
+//let change = car.changeGear(gear: 11)
+//
+//if change {
+//    print("Changed gear successfully")
+//} else {
+//    print("You've picked the wrong gear")
+//}
+//
+//
+//class Statue {
+//    var sculptor = "Unknown"
+//}
+//var venusDeMilo = Statue()
+//venusDeMilo.sculptor = "Alexandros of Antioch"
+//var david = venusDeMilo
+//print(venusDeMilo.sculptor)
+//print(david.sculptor)
+//
+//class Hospital {
+//    var onCallStaff = [String]()
+//}
+//var londonCentral = Hospital()
+//var londonWest = londonCentral
+//londonCentral.onCallStaff.append("Dr Harlan")
+//londonWest.onCallStaff.append("Dr Haskins")
+//print(londonCentral.onCallStaff.count)
+//print(londonWest.onCallStaff.count)
+//
+//
+//class User {
+//    let id: Int
+//
+//    init(id: Int) {
+//        self.id = id
+//        print("User \(id): I'm alive!")
+//    }
+//
+//    deinit {
+//        print("User \(id): I'm dead!")
+//    }
+//}
+//
+//var users = [User]()
+//
+//for i in 1...3 {
+//    let user = User(id: i)
+//    print("User \(user.id): I'm in control!")
+//    users.append(user)
+//}
+//
+//print("Loop is finished!")
+//users.removeAll()
+//print("Array is clear!")
+//
+//
+//
+//class Light {
+//    var onState = false
+//    func toggle() {
+//        if onState {
+//            onState = false
+//        } else {
+//            onState = true
+//        }
+//        print("Click")
+//    }
+//}
+//let light = Light()
+//light.toggle()
+//light.toggle()
+//
+//
+//class Phasers {
+//    var energyLevel = 100
+//    func firePhasers() {
+//        if energyLevel > 10 {
+//            print("Firing!")
+//            energyLevel -= 10
+//        }
+//    }
+//}
+//var phasers = Phasers()
+//phasers.firePhasers()
+//phasers.energyLevel
+//phasers.firePhasers()
+//phasers.energyLevel
+//
+//
+//struct Barbecue {
+//    var charcoalBricks = 20
+//    mutating func addBricks(_ number: Int) {
+//        charcoalBricks += number
+//    }
+//}
+//var barbecue = Barbecue()
+//barbecue.addBricks(4)
+//print(barbecue.charcoalBricks)
+
+
+
+
+class User {
+    var username = "print"
+
+    func copy() -> User {
+        let user = User()
+        user.username = username
+        return user
+    }
+}
+
+var user1 = User()
+var user2 = user1.copy()
+user2.username = "test"
+
+print(user1.username)
+print(user2.username)
+
+
+
+class Animal {
+    
+    let legs: Int
+    init(legs: Int) {
+        self.legs = legs
+    }
+
+}
+
+class Dog: Animal {
+    
+
+    func speak () {
+        print("I'm a dog with \(legs) legs and can do awrf")
+    }
+}
+
+class Corgi: Dog {
+    
+    override func speak() {
+        print ("I'm a Corgi with \(legs) legs and can do jump")
+    }
+    
+}
+
+class Poodle: Dog {
+    
+    override func speak() {
+        print ("I'm a Poodle with \(legs) legs and can do poodles eyes")
+    }
+    
+}
+
+class Cat: Animal {
+    
+    let isTame: Bool
+    init(isTame: Bool, legs: Int){
+        self.isTame = isTame
+        super.init(legs: legs)
+    }
+    
+    func speak() {
+        if (isTame) {
+            print("I'm a house cat with \(legs) legs and can do meowing sounds")
         } else {
-            return true
+            print("I'll eat you alive")
         }
     }
 }
 
-let color = Toy(color: "1")
-print(color.isForGirls)
+class Persian: Cat {
+    
+    override func speak() {
+        if (isTame) {
+            print("I'm a persian breed cat with \(legs) legs and can do meowwy sounds")
+        } else {
+            print("I'll eat you alive")
+        }
+    }
+    
+}
+
+class Lion: Cat {
+    
+    override func speak() {
+        if (!isTame) {
+            print("I'm the king of the jungle with \(legs) legs and will eat you alive")
+        } else {
+            print("something wen't wrong here Dr.")
+        }
+    }
+}
+
+
+var dogTrait = Dog(legs: 4)
+var corgiTrait = Corgi(legs: 4)
+var poodleTrait = Poodle(legs: 4)
+var catTrait = Cat(isTame: true, legs: 4)
+var persianTrait = Persian(isTame: true, legs: 4)
+var lionTrait = Lion(isTame: false, legs: 4)
+
+
+dogTrait.speak()
+corgiTrait.speak()
+poodleTrait.speak()
+catTrait.speak()
+persianTrait.speak()
+lionTrait.speak()
+
+
+protocol Vehicle {
+    func estimateTime(for distance: Int) -> Int
+    func travel(distance: Int)
+}
+
+struct Car: Vehicle {
+    func estimateTime(for distance: Int) -> Int {
+        distance / 50
+    }
+    
+    func travel(distance: Int) {
+        print("I'm driving \(distance)km")
+    }
+    
+    func openSunroof() {
+        print("It's a nice day!")
+    }
+}
+
+
+func commute(distance: Int, using vehicle: Car) {
+    if vehicle.estimateTime(for: distance) > 100 {
+        print("That's too slow!")
+    } else {
+        vehicle.travel(distance: distance)
+    }
+}
+
+let car = Car()
+commute(distance: 100, using: car)
+ 
+
+struct Book {
+    let title: String
+    let pageCount: Int
+    let readingHours: Int
+}
+
+extension Book {
+    init(title: String, pageCount: Int) {
+          self.title = title
+          self.pageCount = pageCount
+          self.readingHours = pageCount / 50
+      }
+}
+
+let lotr = Book(title: "Lord of the Rings", pageCount: 1178, readingHours: 50)
+
+// Checkpoint #8 100 days switf ui
+protocol Building {
+    
+    var rooms: Int { get set }
+    var cost: Int { get set }
+    var name: String { get set }
+    
+    func salesSummary()
+}
+
+struct House: Building {
+    
+    var rooms = 4
+    var cost = 150
+    var name = "Jonathan"
+    
+    func salesSummary() {
+        print("This house has \(rooms) rooms in it, cost's \(cost) PHP")
+        print("Sold by \(name)")
+    }
+}
+
+struct Office: Building, Comparable {
+    
+    var rooms = 10
+    var cost = 20000
+    var name = "Mjholnir"
+    var floorCount: Int
+    
+    func salesSummary() {
+        print("This house has \(rooms) rooms in it, cost's \(cost) PHP")
+        print("Sold by \(name)")
+    }
+    
+    static func < (lhs: Office, rhs: Office) -> Bool {
+        // This compares the left office's floor count
+        // to the right offices's floor count
+        // it returns TRUE if the left floor count is less than
+        // the right floor count.
+        lhs.floorCount < rhs.floorCount
+    }
+}
+
+let house = House()
+house.salesSummary()
+
+
+let office = [Office(floorCount: 12), Office(floorCount: 5), Office(floorCount: 13)]
+office.sorted().forEach{print("Floors: \($0.floorCount)")}
+
+let leftOffice = Office(floorCount: 50)
+let rightOffice = Office(floorCount: 100)
+print(leftOffice == rightOffice)
+
+
+extension String {
+    func trimmed() -> String {
+        self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    mutating func trim() {
+        self = self.trimmed()
+    }
+}
+
+let song: String? = "Shake it Off"
+if let unwrappedSong = song {
+    
+    let noSpaces = unwrappedSong.filter{!$0.isWhitespace}
+    
+    print("The name has \(noSpaces.count) letters.")
+}
+
+let album = "Red"
+let albums = ["Reputation", "Red", "1989"]
+if let position = albums.firstIndex(of: album) {
+    print("Found \(album) at position \(position).")
+}
+
+
+func double(number: Int?) -> Int? {
+    guard let number = number else {
+        return nil
+    }
+    return number * 2
+}
+let input = 5
+if let doubled = double(number: input) {
+    print("\(input) doubled is \(doubled).")
+}
+
+
+func playOpera(by composer: String?) -> String? {
+    guard let composer = composer else {
+        return "Please specify a composer."
+    }
+    if composer == "Mozart" {
+        return "Le nozze di Figaro"
+    } else {
+        return nil
+    }
+}
+if let opera = playOpera(by: " ") {
+    print(opera)
+}
+
+
+func playScale(name: String?) {
+    guard let name = name else {
+        return
+    }
+    print("Playing the \(name) scale.")
+}
+playScale(name: "C")
+
+func uppercase(string: String?) -> String? {
+    guard let string = string else {
+        return nil
+    }
+    return string.uppercased()
+}
+if let result = uppercase(string: nil) {
+    print(result)
+}
+
+
+func username(for id: Int?) -> String {
+    guard let id = id else {
+        return "No input"
+    }
+    if id == 1989 {
+        return "Taylor Swift"
+    } else {
+        return "Invalid"
+    }
+}
+
+print(username(for: 1989))
+
+let shoppingList = ["eggs", "tomatoes", "grapes"]
+let firstItem = shoppingList.first?.appending(" are on my shopping list")
+
+
+let captains: [String]? = ["Archer", "Lorca", "Sisko"]
+let lengthOfBestCaptain = captains?.first?.count
+
+
+
+// checkpoint #9 100 days swift UI
+// My solution
+func randomizer(randomArray: [Int]?) -> Int {if let randomArray = randomArray?.randomElement() {return Int(randomArray)} else {return (Int.random(in: 1...100))}}
+
+let newRandom: Int = randomizer(randomArray: [1,2,3,4,60,99,1000,100000])
+
+print(newRandom)
+
+// Someone else's
+func rando(_ arrays: [Int]?) -> Int { arrays?.randomElement() ?? Int.random(in: 1...100)}
+
+print(rando([17, 32, 55, 99]))
+print(rando([]))
+
+var isSaved = false
+isSaved.toggle()
+isSaved.toggle()
+
+
+let files = ["test.jpg", "coco.text", "cali.jpg"]
+
+for file in files {
+    if file.hasSuffix(".jpg") == false {
+        continue
+    }
+    
+    print("Found picture: \(file)")
+}
+
+
+struct Employee {
+    let name: String
+    var vacationAllocated = 14
+    var vacationTaken = 0
+
+    var vacationRemaining: Int {
+        get {
+            vacationAllocated - vacationTaken
+        }
+
+        set {
+            vacationAllocated = vacationTaken + newValue
+        }
+    }
+}
+
+var employTest = Employee(name: "jonathan")
+employTest.vacationTaken = 10
+employTest.vacationRemaining
+employTest.vacationAllocated
+
+
+let opposites = [
+    "Mario": "Wario",
+    "Luigi": "Waluigi"
+]
+

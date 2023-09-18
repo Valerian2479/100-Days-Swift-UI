@@ -4,7 +4,8 @@
 ////
 ////  Created by June Paul Santillan on 9/6/23.
 ////
-//
+// 
+
 
 import SwiftUI
 
@@ -15,41 +16,41 @@ struct ContentView: View {
     @FocusState private var numberIsFocused: Bool
     
     let conversionSelection = ["Celsius", "Fahrenheit", "Kelvin"]
-   
+    
     func convert(from convertFrom: String, to convertTo: String) -> Double {
         
         var convertValue = 0.0
         
         if convertFrom == "Kelvin" && convertTo == "Fahrenheit" {
             
-                
+            
             convertValue = 9/5 * (input - 273.15) + 32
-                
+            
             
         } else if convertFrom == "Kelvin" && convertTo == "Celsius" {
             
-                
-                convertValue = input - 273.15
-
+            
+            convertValue = input - 273.15
+            
             
         } else if convertFrom == "Celsius" && convertTo == "Fahrenheit" {
             
-   
-                
-                 convertValue = 9/5 * (input) + 32
-
+            
+            
+            convertValue = 9/5 * (input) + 32
+            
         } else if convertFrom == "Celsius" && convertTo == "Kelvin" {
-     
-                
-                convertValue = input + 273.15
-
+            
+            
+            convertValue = input + 273.15
+            
         } else if convertFrom == "Fahrenheit" && convertTo == "Celsius" {
             
-                convertValue = (input - 32) / 1.80
+            convertValue = (input - 32) / 1.80
             
         } else if convertFrom == "Fahrenheit" && convertTo == "Kelvin" {
             
-                convertValue = 5/9 * (input - 32) + 273.15
+            convertValue = 5/9 * (input - 32) + 273.15
             
         } else {
             print("Something went wrong")
@@ -74,7 +75,7 @@ struct ContentView: View {
                         .keyboardType(.decimalPad)
                         .focused($numberIsFocused)
                     
-                    }
+                }
                 Section {
                     Picker("Select Conversion", selection: $convertFrom){
                         ForEach(conversionSelection, id: \.self){
@@ -86,7 +87,7 @@ struct ContentView: View {
                 } header: {
                     Text("Select input unit")
                 }
-
+                
                 
                 Section {
                     Picker("Select Conversion", selection: $convertTo){
@@ -103,7 +104,7 @@ struct ContentView: View {
                 Section {
                     Text(converted, format: .number)
                 }
-            
+                
             }
             .navigationTitle("Conversion")
             .toolbar {
@@ -124,3 +125,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

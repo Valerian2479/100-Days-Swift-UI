@@ -4,18 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>WeSplit.xcscheme_^#shared#^_</key>
+		<key>GuessTheFlag.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>E66CA1042AA6E2FE002E2925</key>
-		<dict>
-			<key>primary</key>
-			<true/>
 		</dict>
 	</dict>
 </dict>

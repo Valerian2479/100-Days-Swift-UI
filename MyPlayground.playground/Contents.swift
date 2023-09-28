@@ -223,33 +223,33 @@ while colorCounter < 5 {
 //printTimesTables(for: 1, end: 10)
 
 
-//enum squareRoot: Error {
-//    case outOfBounds, noRoot
-//}
+enum squareRoot: Error {
+    case outOfBounds, noRoot
+}
+
+
+func returnSquareRoot (_ number: Int) throws -> Int {
+
+    if number < 1 || number > 10_000 {
+        throw squareRoot.outOfBounds
+    }
+    for i in 1...100 {
+        if number == i * i {
+            return i
+        }
+    }
+    throw squareRoot.noRoot
+}
+
 //
-//
-//func returnSquareRoot (_ number: Int) throws -> Int {
-//
-//    if number < 1 || number > 10_000 {
-//        throw squareRoot.outOfBounds
-//    }
-//    for i in 1...100 {
-//        if number == i * i {
-//            return i
-//        }
-//    }
-//    throw squareRoot.noRoot
-//}
-//
-//
-//do {
-//    let result = try returnSquareRoot(55)
-//    print("\(result)")
-//} catch squareRoot.outOfBounds {
-//    print("Out of bounds" )
-//} catch squareRoot.noRoot {
-//    print("no root found")
-//}
+do {
+    let result = try returnSquareRoot(25)
+    print("\(result)")
+} catch squareRoot.outOfBounds {
+    print("Out of bounds" )
+} catch squareRoot.noRoot {
+    print("no root found")
+}
 
 //let rowBoat = { (distance: Int) in
 //    for _ in 1...distance {
@@ -868,7 +868,7 @@ struct Employee {
 }
 
 var employTest = Employee(name: "jonathan")
-employTest.vacationTaken = 10
+employTest.vacationTaken = 14
 employTest.vacationRemaining
 employTest.vacationAllocated
 
